@@ -21,15 +21,15 @@ from rest_framework.routers import DefaultRouter
 from rest_framework import routers
 
 from restaurant import views
+from restaurant.views import BookingViewSet
 
 router = routers.DefaultRouter()
-#router.register(r'tables', views.BookingViewSet)
-
+router.register(r'tables', views.BookingViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('restaurant/', include('restaurant.urls')),
     path('restaurant/menu/', include('restaurant.urls')),
-    #path('restaurant/booking/', include('router.urls')),
+    path('restaurant/booking/', include('router.urls')),
     #path('api/', include('LittleLemonAPI.urls')),
     path('api-auth/', include('rest_framework.urls')),
     path('auth/', include('djoser.urls')),
