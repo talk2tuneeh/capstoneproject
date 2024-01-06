@@ -25,6 +25,7 @@ from restaurant.views import BookingViewSet
 
 router = routers.DefaultRouter()
 router.register(r'tables', views.BookingViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('restaurant/', include('restaurant.urls')),
